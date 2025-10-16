@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Botão Pulsante</title>
-  
+
   <!-- TikTok Pixel Code Start -->
   <script>
   !function (w, d, t) {
@@ -71,6 +71,19 @@
   </style>
 </head>
 <body>
-  <button class="botao-pulsante">CLIQUE AQUI</button>
+  <button class="botao-pulsante" onclick="cliqueBotao()">CLIQUE AQUI</button>
+
+  <script>
+    function cliqueBotao() {
+      // Envia o evento para o TikTok Pixel
+      if (typeof ttq !== 'undefined') {
+        ttq.track('ClickButton');
+      }
+      // Redireciona após breve delay
+      setTimeout(() => {
+        window.location.href = 'https://flexionpay.com/redirect/vipvds';
+      }, 300);
+    }
+  </script>
 </body>
 </html>
